@@ -1,5 +1,5 @@
 # Lazy Action ROMs Builder |LineageOS| only for a10s
-Compile your first custom ROM via Github Actions - with ldcheck setup.
+Compile your first custom ROM for a10s via Github Actions
 
 ## How to Use
 1. Fork this repository.
@@ -13,4 +13,5 @@ Compile your first custom ROM via Github Actions - with ldcheck setup.
  - [cd-Crypton](https://github.com/cd-Crypton)
  - [that1](https://github.com/that1)
  - [carlodandan](https://github.com/carlodandan)
+ - [onesmiled](https://github.com/onesmiledx) - for remade scripts to build rom
  - And to all Contributors in every repositories and scripts I used.
