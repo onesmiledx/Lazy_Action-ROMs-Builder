@@ -39,11 +39,6 @@ jobs:
 
     - name: Cleanup
       uses: rokibhasansagar/slimhub_actions@main
-      
-    - name: Set Swap Space
-      uses: pierotofy/set-swap-space@master
-      with:
-        swap-size-gb: 12
 
     - name: Check Manifest Branch
       run: |
@@ -87,6 +82,7 @@ jobs:
       
     - name: Clone Device Tree
       run: |
+        rm -rf .repo
         cd android-build
         git clone https://github.com/onesmiledx/android_device_samsung_a10s device/samsung/a10s
         git clone https://github.com/onesmiledx/android_vendor_samsung_a10s vendor/samsung/a10s
@@ -95,6 +91,11 @@ jobs:
       if: env.CHECK_LEGACY_BRANCH == 'true'
       run: |
         sudo apt-get install python2 python-is-python2
+
+    - name: Set Swap Space
+      uses: pierotofy/set-swap-space@master
+      with:
+        swap-size-gb: 12
 
     - name: Building LineageOS
       run: |
