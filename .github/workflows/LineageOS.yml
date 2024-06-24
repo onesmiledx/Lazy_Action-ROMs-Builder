@@ -75,7 +75,7 @@ jobs:
     - name: Initialize Repo
       run: |
         mkdir android-build
-        cd android-bui;d
+        cd android-build
         git config --global user.name "onesmiledx"
         git config --global user.email "beksultanbazuov@gmail.com"
         repo init --depth=1 -u https://github.com/LineageOS/android.git -b ${{ inputs.MANIFEST_BRANCH }}
@@ -116,6 +116,6 @@ jobs:
         tag_name: ${{ github.run_id }}
         body: |
           Build: ${{ inputs.MANIFEST_BRANCH }}
-          Device: [Device Tree/Branch](${{ inputs.DEVICE_TREE }}/tree/${{ inputs.DEVICE_TREE_BRANCH }})
+          Device: Samsung Galaxy A10s
           Commit: Most recent [commit](${{ inputs.DEVICE_TREE }}/commit/${{ env.COMMIT_ID }}) during building.
 
