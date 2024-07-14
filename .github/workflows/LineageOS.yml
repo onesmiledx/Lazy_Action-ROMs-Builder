@@ -9,9 +9,6 @@ on:
         default: ''
         type: choice
         options:
-        - lineage-20.0
-        - lineage-19.1
-        - lineage-19.0
         - lineage-18.1
         - lineage-18.0
         - lineage-17.1
@@ -73,7 +70,7 @@ jobs:
         cd android-build
         git config --global user.name "onesmiledx"
         git config --global user.email "beksultanbazuov@gmail.com"
-        repo init --depth=1 -u https://github.com/LineageOS/android.git -b ${{ inputs.MANIFEST_BRANCH }}
+        repo init --depth=1 -u https://github.com/LineageOS/android.git -b ${{ inputs.MANIFEST_BRANCH }} --git-lfs
 
     - name: Repo Sync
       run: |
