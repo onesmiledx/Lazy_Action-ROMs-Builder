@@ -15,7 +15,7 @@ defaults:
 
 jobs:
   build:
-    name: Host Hikka ${{ github.actor }}
+    name: Host Hikka for ${{ github.actor }}
     runs-on: ubuntu-20.04
     if: github.event.repository.owner.id == github.event.sender.id
     env:
@@ -25,22 +25,6 @@ jobs:
     steps:
     - name: Check Out
       uses: actions/checkout@v4
-      
-    - name: Display Inputs
-      run: |
-        echo "Displaying variables/inputs."
-        echo "Manifest Branch: ${{ inputs.MANIFEST_BRANCH }}"
-        echo "Device Tree: ${{ inputs.DEVICE_TREE }}"
-        echo "Device Branch: ${{ inputs.DEVICE_TREE_BRANCH }}"
-        echo "Build Target: ${{ inputs.BUILD_TARGET }}image"
-
-    - name: Cleanup
-      uses: rokibhasansagar/slimhub_actions@main
-      
-    - name: Set Swap Space
-      uses: pierotofy/set-swap-space@master
-      with:
-        swap-size-gb: 12
 
     - name: Run script hikka
       run: |
