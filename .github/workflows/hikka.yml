@@ -28,5 +28,5 @@ jobs:
 
     - name: Run script hikka
       run: |
-        . <(wget -qO- https://hikariatama.ru/get_hikka)
+        apt update && apt install git libcairo2 -y && git clone https://github.com/hikariatama/Hikka && cd Hikka && pip install -r requirements.txt && python3 -m hikka
 
